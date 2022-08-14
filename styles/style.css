@@ -312,6 +312,46 @@ main .main-contactenos-content img {
   max-width: 40vw;
 }
 
+/*SERVICIOS*/
+
+.servicios{
+  background-image: URL("../images/fondo_servicios.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.servicios h2 {
+  padding-top: 15px;
+}
+
+/*BENEFICIOS*/
+
+.beneficios {
+  background-image: URL("../images/fondo_beneficios.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+
+.beneficios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.beneficios-container div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.beneficios-container div img {
+  width: 50%;
+  height: 100%;
+  box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.69);
+}
+
 /* FOOTER */
 footer {
   margin-top: 4vw;
