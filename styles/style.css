@@ -1,10 +1,341 @@
 /**Estilos Evolutionetec*/
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+:root{
+    font-size: 62.5%;
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Poppins', sans-serif;
 
-* {
+    --fs-mb-h1: 2.5rem;
+    --fs-mb-h2: 1.5rem;
+    --fs-mb-text-normal: 1.5rem;
+    --fs-mb-text-medium: 1rem;
+    --fs-mb-text-hero-button: 1.2rem;
+    --fs-mb-text-contactenos-button: 1.4rem;
+
+    --fs-tb-h1: 3rem;
+    --fs-tb-h2: 1.8rem;
+    --fs-tb-text-normal: 2.187rem;
+    --fs-tb-text-medium: 1.375rem;
+    --fs-tb-text-small: 1.8rem;
+    --fs-tb-text-menu: 1.2rem;
+
+    --fs-dt-titles: 2.75rem; /*44pt*/
+    --fs-dt-text-normal: 2.75rem; /*44pt*/
+    --fs-dt-text-medium: 1.5rem; /*24*/
+    --fs-dt-text-small: 1.5rem; /*24*/
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+
+    --clr-primary: #1073DD; /*azul*/
+    --clr-secondary: #093F70; /*azul oscuro*/
+    --clr-accent: #18AD97; /*verde agua*/
+    --clr-white: #FFFFFF; /*blanco*/ 
+    --clr-whatsapp-teal: #075E54;
+    --clr-whatsapp-light: #25D366;
+
+    --padding-inline: 2.5vw;
+}
+
+/*RESETEO DE CSS*//* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Set font weight for Hs */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--fw-light);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*FIN DEL RESETEO CSS*/
+
+/* UTILIDADES */
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-secondary);
+  font-size: var(--fs-mb-text-normal);
+  font-weight: var(--fw-light);
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: var(--fs-mb-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-primary);
+}
+
+section {
+  padding-inline: var(--padding-inline);
+}
+
+.text-white {
+  color: var(--clr-white);
+}
+
+.text-accent {
+  color: var(--clr-accent);
+}
+
+.text-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+/* HEADER */
+
+.header {
+  background-color: var(--clr-primary);
+  height: 80px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  position: fixed;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  line-height: 80px;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 100%;
+}
+
+.nav-toggle {
+  color: var(--clr-white);
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.nav-menu_link {
+  list-style: none;
+  font-size: 18px;
+  padding: 0px 10px;
+  width: max-content;
+}
+
+.nav-menu_link a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
+
+@media only screen and (max-width: 1023px) {
+
+  body {
+    margin-top: 60px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background-color: var(--clr-primary);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    overflow-y: auto;
+    transition: left 0.4s;
+  }
+
+  .nav-menu_visible {
+    left: 100%;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu_link {
+    font-size: 25px;
+    padding: 10px 0px;
+    width: max-content;
+  }
+
+}
+
+/* HERO */
+.hero {
+  padding-inline: var(--padding-inline);
+  padding-block: 2.5vw;
+  background-image: linear-gradient(0deg, var(--clr-accent) 0%, var(--clr-primary) 100%);
+  clip-path: ellipse(100% 55% at 48% 44%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250px;
+}
+
+.hero .hero-text h1 {
+  font-size: var(--fs-mb-h1);
+  font-weight: var(--fw-light);
+  color: var(--clr-white);
+}
+
+.hero .hero-text button {
+  font-size: var(--fs-mb-text-hero-button);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-secondary);
+  background-color: var(--clr-white);
+  border: none;
+  border-radius: 100px;
+  padding-top: 0.5vw;
+  padding-inline: 2vw;
+  margin-top: 2vw;
+}
+
+.hero .hero-image {
+  max-width: 35vw;
+}
+
+/* MAIN */
+main .main-conozcanos {
+  margin-top: 5vw;
+}
+
+main .main-conozcanos p {
+  margin-bottom: 4vw;
+}
+
+main .main-contactenos-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .main-contactenos-content button {
+  font-size: var(--fs-mb-text-contactenos-button);
+  font-weight: var(--fw-light);
+  color: var(--clr-white);
+  background-color: var(--clr-whatsapp-light);
+  border: none;
+  border-radius: 100px;
+  padding-top: 0.5vw;
+  padding-inline: 2vw;
+  margin-top: 2vw;
+}
+
+main .main-contactenos-content img {
+  max-width: 40vw;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 4vw;
+  min-height: 25vw;
+  background: rgb(16,115,221);
+  background: linear-gradient(0deg, rgba(16,115,221,1) 0%, rgba(24,173,151,1) 100%);
+  padding-block: 5vw;
+  padding-inline: var(--padding-inline);
+}
+
+footer .logo-img {
+  width: 124px;
+}
+
+footer .footer-email {
+  margin-top: 2vw;
+  font-size: var(--fs-mb-text-medium);
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (min-width: 900px) { /* DESKTOP */
+  body {
+
+  }
 }

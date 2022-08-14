@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,78 @@
     <title>Evolutionetec</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <script src="./scripts/index.js"></script>
+    <script src="https://kit.fontawesome.com/521fcec492.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="./images/logo.svg" alt="Logo Evolutionetec" class="logo-img">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" id="button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu nav-menu_visible" id="menu">
+            <li class="nav-menu_link"><a href="#conzcanos">Conózcanos</a></li>
+            <li class="nav-menu_link"><a href="#servicios">Servicios</a></li>
+            <li class="nav-menu_link"><a href="#beneficios">Beneficios</a></li>
+            <li class="nav-menu_link"><a href="#contactenos">Contáctenos</a></li>
+        </ul>
+    </header>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Dirección y validación eficiente en incidentes de ciberseguridad.</h1>
+            <button>CONTÁCTENOS</button>
+        </div>
+        <img src="./images/hero-image.svg" alt="" class="hero-image">
+    </div>
+
+    <main>
+        <section class="main-conozcanos" id="conozcanos">
+            <h2>Conózcanos</h2>
+            <p>Asistimos a pequeñas y medianas empresas con los productos de seguridad del mejor TCO de la industria, combinando capacidades comerciales nativas de SIEM con nuestro análisis avanzado e inteligencia de amenazas para la detección de ciberataques.</p>
+            <p>Brindamos servicios de detección y validación de ataques cibernéticos, administración de la plataforma SIEM, casos de uso personalizados, paneles, informes y cobertura 24/7.</p>
+        </section>
+
+        <section id="servicios">
+            <h2 class="text-white">Servicios</h2>
+            <!-- CAROUSEL -->
+        </section>
+
+        <section id="beneficios">
+            <h2 class="text-white">Beneficios</h2>
+            <!-- CARDS -->
+        </section>
+
+        <section id="contactenos">
+            <h2>Contáctenos</h2>
+            <div class="main-contactenos-content">
+                <div>
+                    <p>El equipo de expertos de <span class="text-accent">Evolutionet<span class="text-semibold">ec</span></span> o asesorará acerca de las mejores opciones en ciberseguridad para su empresa.</p>
+                    <button>Whatsapp Evolutionet<span class="text-semibold">ec</span></button>
+                </div>
+                <img src="./images/contactenos-image.svg" alt="">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="./images/logo.svg" alt="Logo Evolutionetec" class="logo-img">
+        <p class="footer-email text-white">vulloa@Evolutionetec.com</p>
+    </footer>
+    <script>
+        const navToggle = document.getElementById("button")
+        const navMenu = document.getElementById("menu")
+
+        navToggle.addEventListener("click", ()=> {
+            navMenu.classList.toggle("nav-menu_visible")
+
+            if (navMenu.classList.contains("nav-menu_visible")) {
+                navToggle.setAttribute("aria-label", "Cerrar menú")
+            }
+            else {
+                navToggle.setAttribute("aria-label", "Abrir menú")
+            }
+        })
+    </script>
 </body>
 </html>
