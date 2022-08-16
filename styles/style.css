@@ -325,6 +325,15 @@ main .main-contactenos-content img {
   padding-top: 15px;
 }
 
+.servicios .carousel-inner span {
+  position: relative;
+  z-index: 1;
+  top: -70px;
+  left: 20px;
+  color: #eee;
+  font-size: 2rem;
+}
+
 /*BENEFICIOS*/
 
 .beneficios {
