@@ -625,8 +625,6 @@ section[id]{
   scroll-margin-top: 80px;
 }
 
-@media only screen and (min-width: 1023px) {
-  section[id]{
-    scroll-margin-top: 60px;
-  }
+main {
+  overflow-x: hidden;
 }
