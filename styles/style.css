@@ -1,4 +1,4 @@
-/**Estilos Evolutionetec*/
+/*Estilos Evolutionetec*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 :root{
@@ -6,24 +6,24 @@
     --ff-primary: 'Poppins', sans-serif;
     --ff-secondary: 'Poppins', sans-serif;
 
-    --fs-mb-h1: 2.5rem;
-    --fs-mb-h2: 1.5rem;
-    --fs-mb-text-normal: 1.5rem;
-    --fs-mb-text-medium: 1rem;
-    --fs-mb-text-hero-button: 1.2rem;
-    --fs-mb-text-contactenos-button: 1.4rem;
+    --fs-h1: 5vw;
+    --fs-h2: 3vw;
+    --fs-h3: 2.8vw;
+    --fs-text-normal: 2.7vw;
+    --fs-text-medium: 3vw;
+    --fs-servicios-img: 2.5vw;
+    --fs-beneficios-button: 1.2rem;
+    --fs-text-hero-button: 1.2rem;
+    --fs-text-contactenos-button: 1.4rem;
 
-    --fs-tb-h1: 3rem;
-    --fs-tb-h2: 1.8rem;
-    --fs-tb-text-normal: 2.187rem;
-    --fs-tb-text-medium: 1.375rem;
-    --fs-tb-text-small: 1.8rem;
-    --fs-tb-text-menu: 1.2rem;
-
-    --fs-dt-titles: 2.75rem; /*44pt*/
-    --fs-dt-text-normal: 2.75rem; /*44pt*/
-    --fs-dt-text-medium: 1.5rem; /*24*/
-    --fs-dt-text-small: 1.5rem; /*24*/
+    --fs-h1-wide: 3vw;
+    --fs-h2-wide: 2.5vw;
+    --fs-h3-wide: 2.2vw;
+    --fs-text-normal-wide: 2vw;
+    --fs-text-medium-wide: 2vw;
+    --fs-text-small-wide: 1.7vw;
+    --fs-text-hero-button-wide: 2rem;
+    --fs-text-contactenos-button-wide: 2.8rem;
 
     --fw-light: 300;
     --fw-regular: 400;
@@ -32,11 +32,16 @@
     --clr-primary: #1073DD; /*azul*/
     --clr-secondary: #093F70; /*azul oscuro*/
     --clr-accent: #18AD97; /*verde agua*/
-    --clr-white: #FFFFFF; /*blanco*/ 
+    --clr-accent2: #1DD4BF; /*verde agua 2*/
+    --clr-white: #FFFFFF; /*blanco*/
     --clr-whatsapp-teal: #075E54;
     --clr-whatsapp-light: #25D366;
 
-    --padding-inline: 2.5vw;
+    --padding-inline: 3.5vw;
+    --content-width: 93vw;
+    --content-width-tarjeta: 75vw;
+
+    --padding-inline-wide: 15vw;
 }
 
 /*RESETEO DE CSS*//* Box sizing rules */
@@ -124,16 +129,17 @@ select {
 body {
   font-family: var(--ff-primary);
   color: var(--clr-secondary);
-  font-size: var(--fs-mb-text-normal);
+  font-size: var(--fs-text-normal);
   font-weight: var(--fw-light);
-  margin-top: 80px;
 }
 
 h2 {
-  font-size: var(--fs-mb-h2);
+  font-size: var(--fs-h2);
   font-weight: var(--fw-semibold);
   color: var(--clr-primary);
+  margin-bottom: 1.5vw;
 }
+
 
 section {
   padding-inline: var(--padding-inline);
@@ -155,15 +161,15 @@ section {
 
 .header {
   background-color: var(--clr-primary);
-  height: 80px;
+  height: 60px;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-  position: fixed;
+  position: sticky;
 }
 
 .logo {
@@ -185,20 +191,29 @@ section {
   font-size: 30px;
   padding: 0 20px;
   line-height: 60px;
-  display: none;
+  display: block;
 }
 
 .nav-menu {
   display: flex;
-  justify-content: center;
-  margin-right: 10px;
-  padding: 10px;
+  flex-direction: column;
+  margin: 0;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  background-color: var(--clr-primary);
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  transition: left 0.4s;
 }
 
 .nav-menu_link {
   list-style: none;
-  font-size: 18px;
-  padding: 0px 10px;
+  font-size: 25px;
+  padding: 10px 0px;
   width: max-content;
 }
 
@@ -207,45 +222,11 @@ section {
   color: var(--clr-white);
 }
 
-@media only screen and (max-width: 1023px) {
-
-  body {
-    margin-top: 60px;
-  }
-
-  .header {
-    height: 60px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    margin: 0;
-    position: fixed;
-    left: 0;
-    top: 60px;
-    background-color: var(--clr-primary);
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    overflow-y: auto;
-    transition: left 0.4s;
-  }
-
-  .nav-menu_visible {
-    left: 100%;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-menu_link {
-    font-size: 25px;
-    padding: 10px 0px;
-    width: max-content;
-  }
-
+.nav-menu_visible {
+  left: 100%;
 }
+
+
 
 /* HERO */
 .hero {
@@ -260,13 +241,13 @@ section {
 }
 
 .hero .hero-text h1 {
-  font-size: var(--fs-mb-h1);
+  font-size: var(--fs-h1);
   font-weight: var(--fw-light);
   color: var(--clr-white);
 }
 
 .hero .hero-text button {
-  font-size: var(--fs-mb-text-hero-button);
+  font-size: var(--fs-text-hero-button);
   font-weight: var(--fw-semibold);
   color: var(--clr-secondary);
   background-color: var(--clr-white);
@@ -275,6 +256,11 @@ section {
   padding-top: 0.5vw;
   padding-inline: 2vw;
   margin-top: 2vw;
+}
+
+.hero .hero-text button a {
+  text-decoration: none;
+  color: var(--clr-secondary);
 }
 
 .hero .hero-image {
@@ -290,14 +276,161 @@ main .main-conozcanos p {
   margin-bottom: 4vw;
 }
 
-main .main-contactenos-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+
+.sections-with-bckg-top {
+  background-image: URL("../images/servicios-bckg-top.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 10vw;
+  width: 100vw;
 }
 
-main .main-contactenos-content button {
-  font-size: var(--fs-mb-text-contactenos-button);
+.sections-with-bckg-middle {
+  background-image: linear-gradient(0deg, var(--clr-accent2) 0%, var(--clr-primary) 50%, var(--clr-accent2) 100%);
+}
+
+.sections-with-bckg-bottom {
+  background-image: linear-gradient(0deg, var(--clr-accent) 0%, var(--clr-accent2) 100%);
+  clip-path: ellipse(100% 55% at 48% 44%);
+  /* background-size: 100%;
+  background-repeat: no-repeat;*/
+  min-height: 10vw;
+  width: 100vw;
+}
+
+/*BENEFICIOS*/
+
+.beneficios {
+  padding-top: 5vw;
+  padding-bottom: 30px;
+  padding-inline: var(--padding-inline);
+  position: relative;
+}
+
+.beneficios-container {
+  display: grid;
+  /* flex-direction: column; */
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+}
+
+.beneficios-card {
+  background-color: var(--clr-white);
+  box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.69);
+  text-align: center;
+  padding: var(--padding-inline);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beneficios-card img {
+  height: 7vw;
+  margin: auto;
+  padding-bottom: 2vw;
+}
+
+.beneficios-card h3 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-secondary);
+  margin-bottom: 1.5vw;
+}
+
+.beneficios-card p {
+  display: none;
+}
+
+.beneficios-card button {
+  font-size: var(--fs-beneficios-button);
+  font-weight: var(--fw-light);
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 100px;
+  padding-top: 0.5vw;
+  padding-inline: 2vw;
+  margin-top: 2vw;
+}
+
+.beneficios-tarjeta-container {
+  position: initial;
+}
+
+.beneficios-tarjeta {
+  display: block;
+  position: absolute;
+  top: 25vw;
+  width: var(--content-width);
+  padding: 10vw;
+  background-color: var(--clr-white);
+  box-shadow: 0px 0px 50px 16px rgba(0,0,0,0.46);
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.beneficios-tarjeta-hidden {
+  transform: scale(0);
+}
+
+.beneficios-tarjeta-inv {
+  width: 1px;
+  height: 1px;
+}
+
+.beneficios-tarjeta h3 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-secondary);
+  margin-bottom: 1.5vw;
+}
+
+.beneficios-tarjeta button {
+  font-size: var(--fs-beneficios-button);
+  font-weight: var(--fw-light);
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 100px;
+  padding-top: 0.5vw;
+  padding-inline: 2vw;
+  margin-top: 2vw;
+}
+
+.beneficios-tarjeta-inv h3, .beneficios-tarjeta-inv p  {
+  display: none;
+}
+
+.beneficios-tarjeta-container-wide {
+  display: none;
+}
+
+/* CONTACTENOS */
+#contactenos {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas:  
+    "tit img"
+    "txt img";
+  align-items: center;
+  margin-top: 3vw;
+}
+
+#contactenos h2 {
+  grid-area: tit;
+}
+
+#contactenos .main-contactenos-content {
+  grid-area: txt;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+#contactenos .main-contactenos-content button {
+  font-size: var(--fs-text-contactenos-button);
   font-weight: var(--fw-light);
   color: var(--clr-white);
   background-color: var(--clr-whatsapp-light);
@@ -308,57 +441,14 @@ main .main-contactenos-content button {
   margin-top: 2vw;
 }
 
-main .main-contactenos-content img {
+#contactenos .main-contactenos-content button a {
+  color: var(--clr-white);
+  text-decoration: none;
+} 
+
+#contactenos img {
+  grid-area: img;
   max-width: 40vw;
-}
-
-/*SERVICIOS*/
-
-.servicios{
-  background-image: URL("../images/fondo_servicios.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 20px;
-}
-
-.servicios h2 {
-  padding-top: 15px;
-}
-
-.servicios .carousel-inner span {
-  position: relative;
-  z-index: 1;
-  top: -70px;
-  left: 20px;
-  color: #eee;
-  font-size: 2rem;
-}
-
-/*BENEFICIOS*/
-
-.beneficios {
-  background-image: URL("../images/fondo_beneficios.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 10px;
-}
-
-.beneficios-container {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
-
-.beneficios-container div {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.beneficios-container div img {
-  width: 50%;
-  height: 100%;
-  box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.69);
 }
 
 /* FOOTER */
@@ -372,19 +462,171 @@ footer {
 }
 
 footer .logo-img {
-  width: 124px;
+  width: 40vw;
 }
 
 footer .footer-email {
   margin-top: 2vw;
-  font-size: var(--fs-mb-text-medium);
+  font-size: var(--fs-text-medium);
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES */ 
+@media only screen and (min-width: 1023px) {
 
+  .header {
+    height: 80px;
+  }
 
-@media screen and (min-width: 900px) { /* DESKTOP */
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 10px;
+    padding: 10px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu_link {
+    font-size: 18px;
+    padding: 0px 10px;
+    width: max-content;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
   body {
+    font-size: var(--fs-text-normal-wide);
+  }
 
+  h2 {
+    font-size: var(--fs-h2-wide);
+  }
+
+  section {
+    padding-inline: var(--padding-inline-wide);
+  }
+
+  .hero {
+    padding-inline: var(--padding-inline-wide);
+  }
+
+  .hero .hero-text h1 {
+    font-size: var(--fs-h1-wide);
+  }
+
+  .hero .hero-text button {
+    font-size: var(--fs-text-hero-button-wide);
+  }
+  .hero .hero-text button:hover {
+    cursor: pointer;
+    box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.69);
+  }
+
+  .hero .hero-image {
+    max-width: 20vw;
+  }
+
+  .beneficios {
+    padding-inline: var(--padding-inline-wide);
+  }
+
+  .beneficios-tarjeta-container {
+    display: none;
+  }
+
+  .beneficios-container {
+    display: none;
+  }
+
+  .beneficios-tarjeta-container-wide {
+    display: block;
+    padding-inline: 15vw;
+  }
+
+  .beneficios-carousel-indicadores {
+    background-color: var(--clr-secondary);
+    min-height: 10px;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  .beneficios-carousel-card {
+    height: 40vw;
+    padding-inline: 5vw;
+    padding-top: 5vw;
+    background-color: var(--clr-white);
+    box-shadow: 0px 0px 50px 16px rgba(0,0,0,0.46);
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .beneficios-carousel-card h3 {
+    font-size: var(--fs-h3-wide);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-secondary);
+    margin-bottom: 1.5vw;
+  }
+
+  .beneficios-carousel-card p {
+    font-size: var(--fs-text-small-wide);
+    font-weight: var(--fw-light);
+    color: var(--clr-secondary);
+  }
+
+  #contactenos .main-contactenos-content button {
+    font-size: var(--fs-text-contactenos-button-wide);
+    font-weight: var(--fw-light);
+    color: var(--clr-white);
+    background-color: var(--clr-whatsapp-light);
+    border: none;
+    border-radius: 100px;
+    padding-top: 0.5vw;
+    padding-inline: 2vw;
+    margin-top: 2vw;
+  }
+
+  #contactenos .main-contactenos-content button:hover {
+    cursor: pointer;
+    box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.69);
+  }
+
+
+  #contactenos img {
+    max-width: 25vw;
+  }
+
+  footer {
+    padding-inline: var(--padding-inline-wide);
+    margin-top: 7vw;
+    min-height: 15vw;
+    padding-block: 3vw;
+  }
+
+  footer .logo-img {
+    width: 20vw;
+  }
+
+  footer .footer-email {
+    margin-top: 1vw;
+    font-size: var(--fs-text-medium-wide);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id]{
+  scroll-margin-top: 80px;
+}
+
+@media only screen and (min-width: 1023px) {
+  section[id]{
+    scroll-margin-top: 60px;
   }
 }
